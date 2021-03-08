@@ -1,4 +1,5 @@
-package spring.mvc;
+package spring.mvc.data;
+
 
 import java.sql.Date;
 
@@ -20,7 +21,8 @@ import lombok.NoArgsConstructor;
 public class Entity implements java.io.Serializable {
 	/** キー */
 	@Id
+//	@Column(name="`key`")
 	protected int key;
-	/** 属性 */
-	protected Date attribute;
+	/** 値 */
+	protected Date value;
 }

@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `entity`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `entity` (
   `key` int NOT NULL DEFAULT '0',
-  `attribute` date NOT NULL,
+  `value` date NOT NULL,
   PRIMARY KEY (`key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;

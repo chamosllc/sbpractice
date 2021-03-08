@@ -9,6 +9,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.util.Assert;
 
+import spring.mvc.data.Entity;
+import spring.mvc.data.EntityRepository;
+
 /**
  * テスト:CRUD) Entityデータベース
  */
@@ -27,8 +30,8 @@ public class CRUDTest {
 		 * テスト用エンティティ
 		 */
 		int key = 1;
-		Date attribute = Date.valueOf("2020-04-01");
-		Entity entity = new Entity(key, attribute);
+		Date value = Date.valueOf("2020-04-01");
+		Entity entity = new Entity(key, value);
 		/*
 		 * CREATEテスト
 		 */
@@ -43,10 +46,10 @@ public class CRUDTest {
 		/*
 		 * UPDATEテスト
 		 */
-		attribute = Date.valueOf("2021-04-01");
-		entity.setAttribute(attribute);
+		value = Date.valueOf("2021-04-01");
+		entity.setValue(value);
 		entityRepo.save(entity);
-		Assert.isTrue(entityRepo.findById(entity.getKey()).get().getAttribute().equals(attribute), "Entity UPDATED");
+		Assert.isTrue(entityRepo.findById(entity.getKey()).get().getValue().equals(value), "Entity UPDATED");
 
 		/*
 		 * DELETEテスト
